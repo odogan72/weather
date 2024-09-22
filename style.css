@@ -1,0 +1,315 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+}
+
+.container{
+    height: 100vh;
+    width: 100%; 
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+
+.search-container{
+    position: absolute;
+    left:20px ;
+    top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    z-index: 10;
+}
+
+.search-container i{
+    color: #fff;
+    font-weight: 300px;   
+    cursor: pointer;
+}
+
+.search-container .inp{
+    font-size: 18px;
+    background: transparent;
+    text-align: center;
+    color: #fff;
+    outline: none;
+    border: none;
+    text-transform: capitalize; 
+}
+
+.search-container .inp::placeholder{
+    color: #fff;
+}
+
+.main-content{
+    background-color: rgba(0, 0, 0, 0.363);
+    color: #fff;
+    height: 300px;
+    width: 400px;
+    position: absolute;
+    right: 450px;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 28px;
+    box-shadow: 4px 4px 8px #fff;
+}
+
+.main-content .city{
+    font-size: 40px; 
+    position: absolute;
+    top: 35px;
+    text-transform: capitalize;
+}
+
+.main-content .temperature{
+    position: absolute;
+    top: 95px;
+    font-size: 36px;
+}
+
+.main-content .description{
+    position: absolute;
+    top: 180px;
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+.others{
+    width: 60%;
+    height: 150px; 
+    position: absolute;
+    left: 400px;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgba(81, 72, 72, 0.249);
+    filter: contrast(10);
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px #fff;
+    
+}
+
+.others *{
+    height: 100%;
+    color: #fff;
+    width: 150px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.washington{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+}
+
+.ankara{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+
+}
+
+.paris{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+
+}
+
+.tokyo{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+
+}
+
+.pekin{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+
+}
+
+.bar{
+    height: 100vh;
+    width: 23%;
+    position: absolute;
+    top: 0;
+    border: 2px solid rgb(241, 238, 238);
+    border-top: none;
+    z-index: 7;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 2px 5px 4px #fff;
+    background-color: rgba(0, 0, 0, 0.36);
+    backdrop-filter: blur(5px); 
+}
+
+.bar-in{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 8;
+}
+
+.humidity{
+    position: absolute;
+    top: 200px;
+    left: 50px;
+   
+    
+}
+
+.hm-info{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    
+}
+
+.humidity h4{
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.hm-info .hmdt-value{
+    color: #fff;
+    font-size: 20px;
+}
+
+.hm-info .icon{
+    color: #fff;
+}
+
+.wind{
+    position: absolute;
+    top: 300px;
+    left: 50px;
+}
+
+.wind h4{
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 7px;
+}
+
+.wind-info{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.wind-info .icon{
+    color:#fff;
+}
+
+.wind-value{
+    font-size: 20px;
+    color: #fff;
+}
+
+.visibility{
+    position: absolute;
+    top: 400px;
+    left: 50px;
+}
+
+.visibility h4{
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 7px;
+
+}
+
+.visibility-info{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+}
+
+.visibility-info .icon{
+    color:#fff;
+    
+
+}
+.vis-value{
+    font-size: 20px;
+    color: #fff;
+}
+
+.visibility-range{
+    position: absolute;
+    top: 500px;
+    left: 50px;
+    color: #fff;
+    display: flex;
+    gap: 20px;
+    text-transform: capitalize;
+}
+
+.range-1{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.safe{
+    background-color: greenyellow;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    filter: blur(2px);
+    
+}
+
+.range-2{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+}
+
+.careful{
+    background-color:yellow;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    filter: blur(2px);
+
+}
+
+.range-3{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+}
+
+.unsafe{
+    background-color: red;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    filter: blur(2px);
+
+}
+
