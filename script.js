@@ -12,6 +12,34 @@ const desp2 = document.querySelector(".desp2")
 const video = document.querySelector("video")
 const visibility = document.querySelector(".vis-value")
 const safe = document.querySelector(".safe")
+const unsafe=document.querySelector(".unsafe")
+const careful=document.querySelector(".careful")
+
+/*visibility color*/
+
+function isGreen() {
+    safe.style.backgroundColor = "yellowgreen"
+}
+
+function isNan() {
+    safe.style.backgroundColor = "transparent"
+}
+
+function isNanUnsafe(){
+    unsafe.style.backgroundColor="transparent"
+}
+
+function isNanCareful(){
+    careful.style.backgroundColor="transparent"
+}
+
+function isYellow(){
+    careful.style.backgroundColor="yellow"
+}
+
+function isRed(){
+    unsafe.style.backgroundColor="red"
+}
 
 /*İstanbul*/
 const humidity = document.querySelector(".hmdt-value")
@@ -24,13 +52,13 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${istanbul}&units=metri
     .then(json => {
         switch (json.weather[0].main) {
             case "Clouds":
-                video.src = "cldvd.mp4"
+                video.src = "videos/cldvd.mp4"
                 break;
             case "Rain":
-                video.src = "rain.mp4"
+                video.src = "videos/rain.mp4"
                 break;
             case "Thunderstorm":
-                video.src = "thum.mp4"
+                video.src = "videos/thum.mp4"
                 break;
             case "Clear":
                 video.src = ""
@@ -45,7 +73,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${istanbul}&units=metri
                 container.style.backgroundImage = "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSijEKuxq2jN4y_UFVSl54LttGIpwSTOhnqkg&s)"
                 break;
             case "Snow":
-                video.src = "snow.mp4"
+                video.src = "videos/snow.mp4"
             default:
                 container.style.backgroundImage = " "
         }
@@ -58,18 +86,22 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${istanbul}&units=metri
                     isGreen()
                     setTimeout(isNan,1000)
                 },2000)
+               
+               
 
             }else if(range<=1 && range>=0.5){
                 setInterval(()=>{
                     isYellow()
-                    setTimeout(isNan,1000)
+                    setTimeout(isNanCareful,1000)
                 },2000)
 
             }else{
+                
                 setInterval(()=>{
                     isRed()
-                    setTimeout(isNan,1000)
+                    setTimeout(isNanUnsafe,1000)
                 },2000)
+                
 
             }
             
@@ -79,23 +111,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${istanbul}&units=metri
         description.innerHTML = `${json.weather[0].description}`
     })
 
-/*visibility color*/
 
-function isGreen() {
-    safe.style.backgroundColor = "yellowgreen"
-}
-
-function isNan() {
-    safe.style.backgroundColor = "transparent"
-}
-
-function isYellow(){
-    safe.style.backgroundColor="yellow"
-}
-
-function isRed(){
-    safe.style.backgroundColor="red"
-}
 
 
 /*ALL CİTY*/
@@ -109,13 +125,13 @@ button.addEventListener("click", () => {
         .then(json => {
             switch (json.weather[0].main) {
                 case "Clouds":
-                    video.src = "cldvd.mp4"
+                    video.src = "videos/cldvd.mp4"
                     break;
                 case "Rain":
-                    video.src = "rain.mp4"
+                    video.src = "videos/rain.mp4"
                     break;
                 case "Thunderstorm":
-                    video.src = "thum.mp4"
+                    video.src = "videos/thum.mp4"
                     break;
                 case "Clear":
                     video.src = ""
@@ -126,13 +142,13 @@ button.addEventListener("click", () => {
                     container.style.backgroundImage = "url(https://images.unsplash.com/photo-1519692933481-e162a57d6721?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHJhaW58ZW58MHx8MHx8fDA%3D)"
                     break;
                 case "Fog":
-                    video.src = "fog.mp4"
+                    video.src = "videos/fog.mp4"
                     break;
                 case "Mist":
-                    video.src = "fog.mp4"
+                    video.src = "videos/fog.mp4"
                     break;
                 case "Snow":
-                    video.src = "snow.mp4"
+                    video.src = "videos/snow.mp4"
                     break;
                 case "Tornado":
                     container.style.backgroundImage = "url()"
@@ -153,13 +169,13 @@ button.addEventListener("click", () => {
             }else if(range<=1 && range>=0.5){
                 setInterval(()=>{
                     isYellow()
-                    setTimeout(isNan,1000)
+                    setTimeout(isNanCareful,1000)
                 },2000)
 
             }else{
                 setInterval(()=>{
                     isRed()
-                    setTimeout(isNan,1000)
+                    setTimeout(isNanUnsafe,1000)
                 },2000)
             }
 
